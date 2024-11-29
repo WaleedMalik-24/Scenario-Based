@@ -21,9 +21,15 @@ int main() {
         }
 
         switch (choice) {
-            case 1: cout << "Result: " << num1 + num2 << endl; break;
-            case 2: cout << "Result: " << num1 - num2 << endl; break;
-            case 3: cout << "Result: " << num1 * num2 << endl; break;
+            case 1: 
+                cout << "Result: " << num1 + num2 << endl; 
+                break;
+            case 2: 
+                cout << "Result: " << num1 - num2 << endl; 
+                break;
+            case 3: 
+                cout << "Result: " << num1 * num2 << endl; 
+                break;
             case 4:
                 if (num2 != 0)
                     cout << "Result: " << num1 / num2 << endl;
