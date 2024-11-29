@@ -3,24 +3,28 @@ using namespace std;
 
 int main() {
     int marks;
-    cout << "Enter the marks: ";
-    cin >> marks;
-    if (marks >= 90 && marks <= 100) {
-        cout << "Grade: A" << endl;
-    } else if (marks >= 80 && marks < 90) {
-        cout << "Grade: B" << endl;
-    } else if (marks >= 70 && marks < 80) {
-        cout << "Grade: C" << endl;
-    } else if (marks >= 60 && marks < 70) {
-        cout << "Grade: D" << endl;
-    } else if (marks >= 50 && marks < 60) {
-        cout << "Grade: E" << endl;
-    } else if (marks >= 0 && marks < 50) {
-        cout << "Grade: F" << endl;
-    } else {
-        cout << "Invalid marks entered!" << endl;
-    }
+    char choice;
+
+    do {
+        cout << "Enter marks (0-100): ";
+        cin >> marks;
+
+        if (marks >= 90 && marks <= 100)
+            cout << "Grade: A\n";
+        else if (marks >= 80)
+            cout << "Grade: B\n";
+        else if (marks >= 70)
+            cout << "Grade: C\n";
+        else if (marks >= 60)
+            cout << "Grade: D\n";
+        else if (marks >= 0)
+            cout << "Grade: F\n";
+        else
+            cout << "Invalid marks. Please enter a value between 0-100.\n";
+
+        cout << "Do you want to calculate another grade? (y/n): ";
+        cin >> choice;
+    } while (choice == 'y' || choice == 'Y');
 
     return 0;
 }
-
