@@ -2,47 +2,41 @@
 using namespace std;
 
 int main() {
-    float a, b, sum, subtract, divide, multiply;
-    int x;
+    int choice;
+    double num1, num2;
 
-    cout << "What do you want to do? (Please enter the process number!)" << endl;
-    cout << "1. Addition" << endl;
-    cout << "2. Subtraction" << endl;
-    cout << "3. Division" << endl;
-    cout << "4. Multiplication" << endl;
+    do {
+        cout << "\nCalculator Menu:\n";
+        cout << "1. Addition\n";
+        cout << "2. Subtraction\n";
+        cout << "3. Multiplication\n";
+        cout << "4. Division\n";
+        cout << "5. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-    cin >> x;
-
-    cout << "Enter your first number: " << endl;
-    cin >> a;
-
-    cout << "Enter your second number: " << endl;
-    cin >> b;
-
-    if (x == 1) {
-        sum = a + b;
-        cout << "Sum: " << sum << endl;
-    } 
-    else if (x == 2) {
-        subtract = a - b;
-        cout << "Difference: " << subtract << endl;
-    } 
-    else if (x == 3) {
-        if(b != 0) {
-            divide = a / b;
-            cout << "Quotient: " << divide << endl;
-        } 
-        else {
-            cout << "Error: Division by zero!" << endl;
+        if (choice >= 1 && choice <= 4) {
+            cout << "Enter two numbers: ";
+            cin >> num1 >> num2;
         }
-    } 
-    else if (x == 4) {
-        multiply = a * b;
-        cout << "Product: " << multiply << endl;
-    } 
-    else {
-        cout << "Enter the correct process number!" << endl;
-    }
+
+        switch (choice) {
+            case 1: cout << "Result: " << num1 + num2 << endl; break;
+            case 2: cout << "Result: " << num1 - num2 << endl; break;
+            case 3: cout << "Result: " << num1 * num2 << endl; break;
+            case 4:
+                if (num2 != 0)
+                    cout << "Result: " << num1 / num2 << endl;
+                else
+                    cout << "Division by zero is not allowed.\n";
+                break;
+            case 5:
+                cout << "Exiting...\n";
+                break;
+            default:
+                cout << "Invalid choice. Please try again.\n";
+        }
+    } while (choice != 5);
 
     return 0;
 }
